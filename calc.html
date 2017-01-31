@@ -1,0 +1,152 @@
+<!-- JS Calculator
+Introduction
+
+Now that you have learned JavaScript syntax and been given an introduction to how JavaScript is used in the browser, it is time to apply your skills and get some experience using 'vanilla' JavaScript to create a user interface.
+
+Overview
+
+You will create a calculator with JavaScript. Your calculator should be added to the DOM on page load entirely with JavaScript (you shouldn't type any HTML to represent your calculator ** you can create a container div if you wish **).
+
+Grading
+
+As usual this is going to be a pass fail assignment. If your program meets all the listed requirements, you will receive a 1 on the assignment. If you fail to do so, you will receive a 0 and have until the following Monday to complete the program for .5 credit.
+
+Minimum Requirements
+
+[ ]: The calculator has a screen which displays numbers input by the user, or a summed total based on mathematical operations
+
+[ ]: The calculator has buttons (0-9, +, -, /, *, ., =, C)
+
+[ ]: The calculator can perform the following operations (i.e. is a working calculator:
+
+addition
+subtraction
+division
+multiplication
+[ ]: The 'C' button clears the running total/entered value (works like a clear button).
+
+[ ]: = returns the sum of the current operation
+
+[ ]: All calculator buttons are assigned click events which result in some action being performed (be it updating the displayed value, or performing math)
+
+Stretch Goals
+
+[ ]: Handles decimals
+
+[ ]: Users can enter values/perform math with keyboard input (keypress)
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet"  type="text/css" href="calc.css">
+  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <title>JCalc</title>
+  <script src="./jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="calc-shell">
+          <div>
+            <div class="row">
+              <div id="calc-screen">
+                <div id="mini-screen">
+
+                </div>
+                <div id="main-screen">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 calc-col">
+              <div id="clear" class="calc-key btn">
+                C
+              </div>
+              <div id="seven" class="calc-key btn">
+                7
+              </div>
+              <div id="four" class="calc-key btn">
+                4
+              </div>
+              <div id="one" class="calc-key btn">
+                1
+              </div>
+              <div id="footer-left" class="calc-key btn">
+
+              </div>
+            </div>
+            <div class="col-xs-3 calc-col">
+              <div id="plusMinus" class="calc-key btn">
+                ±
+              </div>
+              <div id="eight" class="calc-key btn">
+                8
+              </div>
+              <div id="five" class="calc-key btn">
+                5
+              </div>
+              <div id="two" class="calc-key btn">
+                2
+              </div>
+              <div id="zero" class="calc-key btn">
+                0
+              </div>
+            </div>
+            <div class="col-xs-3 calc-col">
+              <div id="percent" class="calc-key btn">
+                %
+              </div>
+              <div id="nine" class="calc-key btn">
+                9
+              </div>
+              <div id="six" class="calc-key btn">
+                6
+              </div>
+              <div id="three" class="calc-key btn">
+                3
+              </div>
+              <div id="decimal" class="calc-key btn">
+                .
+              </div>
+            </div>
+            <div class="col-xs-3 calc-col">
+              <div id="divide" class="calc-key btn">
+                ÷
+              </div>
+              <div id="multiply" class="calc-key btn">
+                ×
+              </div>
+              <div id="subtract" class="calc-key btn">
+                -
+              </div>
+              <div id="add" class="calc-key btn">
+                +
+              </div>
+              <div id="equals" class="calc-key btn">
+                =
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="calc.js"></script>
+</body>
+</html>
